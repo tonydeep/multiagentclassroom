@@ -13,7 +13,7 @@
     * **Tính giới hạn:**
         $\lim_{x \to +\infty} f(x) = 1$
         $\lim_{x \to -\infty} f(x) = 1$
-        $\lim_{x \to -1^+} f(x) = -\infty$
+        $\lim_{x \to -1^+} f(x) = -\infty$ 
         $\lim_{x \to -1^-} f(x) = +\infty$
     * **Lập Bảng Biến Thiên:**
         | $x$    | $-\infty$ |       $-1$       | $+\infty$ |

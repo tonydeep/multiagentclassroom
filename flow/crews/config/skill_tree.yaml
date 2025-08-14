@@ -1,0 +1,26 @@
+skill_tree: |
+  # Hồ sơ năng lực học sinh
+  metadata:
+    subject: "Toán"
+    grade: 11
+  
+  abilities:
+    - skill: "Tìm tập xác định"
+      level: "Trung bình"
+      notes: "Nắm vững với các hàm đơn giản, nhưng lúng túng với hàm chứa nhiều điều kiện (căn, mẫu, log...)."
+    
+    - skill: "Tính đạo hàm"
+      level: "Cơ bản"
+      notes: "Thành thạo đạo hàm đa thức. Có thể áp dụng quy tắc đạo hàm của tổng/hiệu/tích/thương nhưng hay sai sót ở các bước tính toán."
+      
+    - skill: "Xét dấu biểu thức"
+      level: "Khá"
+      notes: "Giải tốt bất phương trình bậc nhất, bậc hai. Có thể lập bảng xét dấu."
+
+    - skill: "Lập bảng biến thiên"
+      level: "Yếu"
+      notes: "Chưa tự tổng hợp được các thông tin (đạo hàm, giới hạn) để lập bảng biến thiên một cách chính xác."
+
+    - skill: "Tư duy phản biện"
+      level: "Yếu"
+      notes: "Có xu hướng làm theo các bước được chỉ dẫn, ít khi đặt câu hỏi 'tại sao'."

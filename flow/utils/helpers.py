@@ -104,10 +104,10 @@ def load_yaml(yaml_path: str) -> dict:
     return yaml_data
 
 def save_yaml(yaml_path: str, yaml_data: dict):
+    if not os.path.exists(os.path.dirname(yaml_path)):
+        os.makedirs(os.path.dirname(yaml_path), exist_ok=True)
     with open(yaml_path, "w") as f:
         yaml.dump(yaml_data, f, indent=2, sort_keys=False, allow_unicode=True)
-
-
 
   
 def create_agent_config(participants_path, meta_agents_path, output_path):

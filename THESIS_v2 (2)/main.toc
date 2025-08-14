@@ -1,0 +1,55 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{ii}{chapter*.3}%
+\contentsline {chapter}{List of Figures}{v}{chapter*.4}%
+\contentsline {chapter}{List of Tables}{vi}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background and Research Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research Problem}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Research Objectives and Scope}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Thesis Structure}{3}{section.1.4}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Generative AI in Education}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Before the Era of Large Language Models}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}During the Era of Large Language Models}{5}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Some Related Products for Education}{6}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}One-to-one Tutoring}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Pedagogical Strategies in One-to-One Tutoring}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Applications}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Beyond One-to-One}{8}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Virtual Classroom}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Motivation}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Multi-agent Systems (MAS)}{9}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Turn-takings in Multi-Party Conversations}{10}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Summary and Research Gap}{10}{section.2.4}%
+\contentsline {chapter}{\numberline {3}METHODOLOGY}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Design goals}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Event-driven Architecture}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Stage Module}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Educational Theories and Pedagogical Approaches}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Stage manager}{19}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Turn-takings Module}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Definition}{19}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Challenges}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Next speaker prediction approach}{21}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Can agents have minds of their own? – A proactive approach}{21}{subsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.4.1}Motivation}{21}{subsubsection.3.4.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.4.2}Processing}{22}{subsubsection.3.4.4.2}%
+\contentsline {section}{\numberline {3.5}Role-Based Agentization Module}{25}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Roles from pedagogical principles}{25}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}How to design}{26}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Informations of agent}{27}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}EXPERIMENTAL SETUP AND EVALUATION}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Method}{29}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Tasks}{29}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}LLM-as-a-judge}{30}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Dataset Collection}{31}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Main Results}{32}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Analysis}{32}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Discussions}{34}{section.4.5}%
+\contentsline {chapter}{\numberline {5}CONCLUSION}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Limitations}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Ethical Considerations}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Futures}{40}{section.5.3}%
+\contentsline {chapter}{References}{41}{section.5.3}%
+\contentsline {chapter}{Appendices}{41}{section*.14}%
+\contentsline {chapter}{\numberline {A}Stages}{41}{appendix.1.A}%

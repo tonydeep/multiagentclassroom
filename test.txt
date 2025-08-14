@@ -1855,3 +1855,12 @@ Conversation: TIME=1750690888.8774142 | CON#0 | SENDER=System | TEXT=Chào mừn
 
 TIME=1750690898.7432284 | CON#1 | SENDER=Nguyễn Đức Huy | TEXT=chào
 
+Conversation: TIME=1754729966.07841 | CON#0 | SENDER=System | TEXT=Chào mừng các bạn đến với lớp học. Bài toán của chúng ta là: Xét tính đơn điệu của hàm số $f(x) = -x^4 + 2x^2 - 1$.
+
+
+Conversation: TIME=1754729966.07841 | CON#0 | SENDER=System | TEXT=Chào mừng các bạn đến với lớp học. Bài toán của chúng ta là: Xét tính đơn điệu của hàm số $f(x) = -x^4 + 2x^2 - 1$.
+
+
+Conversation: TIME=1754730956.1786258 | CON#0 | SENDER=System | TEXT=Chào mừng các bạn đến với lớp học. Bài toán của chúng ta là: Xét tính đơn điệu của hàm số $f(x) = \frac{x^2 - x + 1}{x-1}$.
+
+

@@ -1,0 +1,18 @@
+\chapter{System Implementation}
+
+\section{Front-end and Back-end}
+The application employs HTML/CSS/JavaScript for the frontend, Flask Python for the backend, and SQLite3 for the database. The interface in Figure \ref{fig:ui} displays problem details, progress of stage, participant information, user activity status, the user's message input bar. Whenever an agent is selected to speak, while waiting for a response from the LLM API, the status ``is typing" will appear to indicate that the agent will send a message. The backend handles events (e.g., new message, silent pause) to activate agents, send prompts, receive responses, and process them. The database stores and manages conversation history, including agents' thoughts and assessments at each turn. The flow is shown in the Figure \ref{fig:flowchart}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ui.png}
+    \caption{System interface}
+    \label{fig:ui}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/flowchart.png}
+    \caption{System's Flow Chart}
+    \label{fig:flowchart}
+\end{figure}

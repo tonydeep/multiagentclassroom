@@ -1,0 +1,99 @@
+\documentclass[en]{uet-awesome-thesis} 
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{soul} 
+\titleformat{\subsubsection}[block]{\bfseries}{\thesubsubsection}{1em}{}
+\usepackage{anyfontsize}
+\usepackage{lmodern} % để hỗ trợ các cỡ font mở rộng
+% \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\usepackage[numbers]{natbib}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{RESEARCH ON GENERATIVE AI APPLICATIONS IN EDUCATION}
+\author{Đặng Văn Khải}
+\major{Artificial Intelligence}
+\advisor{Ph.D. Trần Văn Khánh}
+% \university{University of Engineering and Technology}
+% \university{ĐẠI HỌC QUỐC GIA HÀ NỘI \\ TRƯỜNG ĐẠI HỌC CÔNG NGHỆ}
+\university{UNIVERSITY OF ENGINEERING AND TECHNOLOGY}
+\universitycity{Ha Noi}
+\degreeyear{2025}
+
+
+
+\input{frontmatter/glossaries}
+\makeglossaries
+
+\begin{document}
+% \input{frontmatter/coverpage}
+
+\maketitle
+\makesidecover
+
+\addcontentsline{toc}{chapter}{Abstract}
+\input{frontmatter/abstract}
+
+\authorship
+
+\approval
+
+\pagenumbering{roman}
+
+\input{frontmatter/thanks}
+
+
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+% \glsaddall
+% \printglossary[type=\acronymtype,title=List of Acronyms, toctitle=List of Acronyms]
+% \printglossary[type=notation,title=List of Notations, toctitle=List of Notations,nonumberlist]
+
+\newpage
+\pagenumbering{arabic}
+
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+
+\singlespacing
+
+\clearpage
+\bibliography{refs}
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{plainnat}
+
+\begin{appendices}
+\input{chapters/appendixA}
+\input{chapters/appendixB}
+\input{chapters/appendixC}
+\end{appendices}
+
+\end{document}

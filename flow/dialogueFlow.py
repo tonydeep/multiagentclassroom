@@ -402,7 +402,7 @@ Evaluation:\n{evaluation}
             "user_name": self.user_name
         }
         return session_data
-    
+     
     def select_talker(self, evaluation_results, lambda_weight=0.5):
         '''
         Select the talker based on the evaluation results.

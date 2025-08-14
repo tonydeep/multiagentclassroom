@@ -1,9 +1,9 @@
 import os
 from pydantic import BaseModel
 from crewai.flow import Flow, start
-from flow.crews.scriptGenerationCrew import ScriptWriter
 from dotenv import load_dotenv
 from flow.utils.helpers import parse_yaml, save_yaml
+from flow.crews.scriptPlannerCrew import ScriptPlannerCrew
 
 load_dotenv()
 
@@ -18,19 +18,21 @@ class ScriptGenerationFlow(Flow[ScriptGenerationState]):
         self.problem = kwargs["problem"]
         self.solution = kwargs["solution"]
         self.keywords = kwargs["keywords"]
+        self.script_writer = ScriptPlannerCrew(agent_name="ScriptWriter", task_name="write_script")
+        self.roles_writer = ScriptPlannerCrew(agent_name="RolesWriter", task_name="write_roles")
 
     @start()
     def generate_script_and_roles(self):
-        script_writer = ScriptWriter(agent_name="ScriptWriter", task_name="write_script")
-        roles_writer = ScriptWriter(agent_name="RolesWriter", task_name="write_roles")
-        script = script_writer.crew().kickoff(inputs={
+        script_writer = self.script_writer.crew()
+        roles_writer = self.roles_writer.crew()
+        script = script_writer.kickoff(inputs={
             "problem": self.problem,
             "solution": self.solution,
             "keywords": self.keywords
         })
         self.state.script = script.raw.replace("```yaml", "").replace("```", "")
         
-        roles = roles_writer.crew().kickoff(inputs={
+        roles = roles_writer.kickoff(inputs={
             "problem": self.problem,
             "solution": self.solution,
             "keywords": self.keywords,

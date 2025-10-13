@@ -1,0 +1,49 @@
+Script:
+stage: 1
+
+name: Tìm hiểu đề bài
+
+description: Chào mừng đến với thế giới phù thủy, nơi chúng ta sẽ cùng nhau giải một bài toán bằng những "bùa chú" toán học! Hôm nay, chúng ta sẽ xét tính đơn điệu của hàm số $f(x) = \frac{3-x}{x+1}$. Hãy đọc kỹ đề bài và cho thầy/cô biết bài toán yêu cầu gì nhé!
+
+
+tasks: [{'id': '1.1', 'description': 'Bài toán yêu cầu chúng ta làm gì với hàm số $f(x) = \\frac{3-x}{x+1}$?\n(Gợi ý: Chúng ta cần xem hàm số này "biến đổi" như thế nào)\n'}, {'id': '1.2', 'description': 'Bạn hiểu "tính đơn điệu" của hàm số có nghĩa là gì trong thế giới toán học?\n(Gợi ý: Hàm số tăng hay giảm?)\n'}]
+
+goals: ['Hiểu rõ yêu cầu của bài toán.', 'Nắm vững khái niệm "tính đơn điệu" (đồng biến, nghịch biến) của hàm số.\n']
+
+stage: 2
+
+name: Lập kế hoạch giải bài
+
+description: Tuyệt vời! Bây giờ chúng ta đã sẵn sàng như Harry trước trận Quidditch. Để chiến thắng bài toán này, chúng ta cần một kế hoạch thật chi tiết. Hãy cùng nhau vạch ra các bước để tìm ra "bí mật" về tính đơn điệu của hàm số $f(x)$.
+
+
+tasks: [{'id': '2.1', 'description': 'Bước đầu tiên để "khám phá" một hàm số là gì?\n(Gợi ý: Hàm số có tồn tại ở "mọi ngóc ngách" không?)\n'}, {'id': '2.2', 'description': 'Sau khi xác định được "lãnh địa" của hàm số, chúng ta cần gì để biết nó đang "mạnh lên" hay "yếu đi"?\n(Gợi ý: Một công cụ mạnh mẽ giúp chúng ta nhìn thấy sự thay đổi...)\n'}, {'id': '2.3', 'description': 'Chúng ta sẽ sử dụng đạo hàm để làm gì? Sau khi tính đạo hàm, chúng ta cần làm gì với nó?\n'}, {'id': '2.4', 'description': 'Sau khi có đạo hàm và biết được dấu của nó, bước cuối cùng để "hoàn thành bản đồ" là gì?\n(Gợi ý: Một bảng tóm tắt sự "biến hóa" của hàm số...)\n'}]
+
+goals: ['Xây dựng được kế hoạch giải bài toán một cách logic và khoa học.', 'Nắm vững các bước cơ bản để xét tính đơn điệu của hàm số (tập xác định, đạo hàm, bảng biến thiên).\n']
+
+stage: 3
+
+name: Thực hiện giải bài
+
+description: Giờ là lúc trổ tài phù thủy toán học! Hãy thực hiện từng bước theo kế hoạch một cách cẩn thận và chính xác. Thầy/cô sẽ là "cây đũa phép" hỗ trợ bạn khi cần thiết.
+
+
+tasks: [{'id': '3.1', 'description': 'Tìm tập xác định $D$ của hàm số $f(x) = \\frac{3-x}{x+1}$. Giá trị nào của $x$ sẽ khiến hàm số này "biến mất"?\n'}, {'id': '3.2', 'description': 'Tính đạo hàm $f\'(x)$ của hàm số $f(x) = \\frac{3-x}{x+1}$. Hãy nhớ lại "bùa chú" (công thức) đạo hàm của một thương: $\\\\left( \\\\frac{u}{v} \\\\right)\' = \\\\frac{u\'v - uv\'}{v^2}$.\n'}, {'id': '3.3', 'description': 'Hãy "biến đổi" (rút gọn) biểu thức đạo hàm vừa tính được. $f\'(x) = ?$\n'}, {'id': '3.4', 'description': 'Xác định dấu của đạo hàm $f\'(x)$. Đạo hàm này luôn mang dấu dương hay dấu âm, hay nó có lúc "sáng" lúc "tối" (đổi dấu)? Giải thích tại sao.\n'}, {'id': '3.5', 'description': 'Tính các giới hạn cần thiết để vẽ bảng biến thiên. Chúng ta cần biết hàm số "hướng về đâu" khi $x$ tiến đến $+\\\\infty$, $-\\\\infty$, $-1^+$ và $-1^-$.\n'}, {'id': '3.6', 'description': 'Dựa vào tất cả những thông tin đã thu thập được (tập xác định, đạo hàm, dấu của đạo hàm, các giới hạn), hãy phác họa "bức tranh toàn cảnh" (bảng biến thiên) của hàm số.\n'}]
+
+goals: ['Thực hiện các phép tính một cách chính xác và cẩn thận.', 'Áp dụng đúng các công thức đạo hàm.', 'Biết cách xét dấu của một biểu thức.', 'Vẽ bảng biến thiên một cách chính xác và đầy đủ.']
+
+stage: 4
+
+name: Kết luận và Đánh giá
+
+description: Hoan hô! Chúng ta đã "giải mã" thành công tính đơn điệu của hàm số $f(x)$! Hãy cùng nhìn lại kết quả và rút ra những bài học quý giá từ cuộc phiêu lưu toán học này.
+
+
+tasks: [{'id': '4.1', 'description': 'Dựa vào bảng biến thiên, hãy cho biết hàm số $f(x) = \\frac{3-x}{x+1}$ "mạnh lên" (đồng biến) hay "yếu đi" (nghịch biến) trên những khoảng nào?\n'}, {'id': '4.2', 'description': 'Vậy, kết luận cuối cùng về tính đơn điệu của hàm số $f(x) = \\frac{3-x}{x+1}$ là gì?\n'}, {'id': '4.3', 'description': 'Trong quá trình "luyện phép" giải bài toán này, bạn đã học được những "bùa chú" (kiến thức) gì mới? Bạn còn cảm thấy "bối rối" ở bước nào không?\n'}]
+
+goals: ['Nắm vững kết quả của bài toán và hiểu rõ ý nghĩa của nó.', 'Rút ra những kinh nghiệm và bài học cho bản thân.', 'Tự đánh giá được khả năng của bản thân và xác định những điểm cần cải thiện (ví dụ: tính đạo hàm của một thương, vẽ bảng biến thiên).\n']
+
+Conversation:
+TIME=1760329136.1680481 | CON#0 | SENDER=System | TEXT=Chào mừng các bạn đến với lớp học. Bài toán của chúng ta là: Xét tính đơn điệu của hàm số $f(x) = \frac{3-x}{x+1}$.
+
+

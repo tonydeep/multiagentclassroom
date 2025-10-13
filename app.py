@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "your-very-secret-key"
+app.secret_key = os.getenv('FLASK_SECRET_KEY', 'your-fallback-secret-key')
 CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 

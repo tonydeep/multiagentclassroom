@@ -1,171 +1,146 @@
 '1':
   stage: '1'
   name: Tìm hiểu đề bài
-  description: 'Chào mừng đến với thử thách khám phá hàm số! Hôm nay, chúng ta sẽ
-    "điều tra" hàm số $f(x) = \\frac{x^2 - x + 1}{x-1}$. Hãy tưởng tượng mình là một
-    học sinh của trường Hogwarts, và hàm số này là một câu bùa chú cần được giải mã.
-
-    Đọc kỹ đề bài và cho biết chúng ta cần tìm hiểu điều gì về hàm số này?
+  description: 'Chào mừng đến với thế giới phù thủy, nơi chúng ta sẽ cùng nhau giải
+    một bài toán bằng những "bùa chú" toán học! Hôm nay, chúng ta sẽ xét tính đơn
+    điệu của hàm số $f(x) = \frac{3-x}{x+1}$. Hãy đọc kỹ đề bài và cho thầy/cô biết
+    bài toán yêu cầu gì nhé!
 
     '
   tasks:
   - id: '1.1'
-    description: 'Bài toán yêu cầu xét tính chất gì của hàm số $f(x)$?
+    description: 'Bài toán yêu cầu chúng ta làm gì với hàm số $f(x) = \frac{3-x}{x+1}$?
+
+      (Gợi ý: Chúng ta cần xem hàm số này "biến đổi" như thế nào)
 
       '
   - id: '1.2'
-    description: 'Hàm số $f(x)$ được cho bởi công thức nào? Hãy viết lại công thức
-      đó.
+    description: 'Bạn hiểu "tính đơn điệu" của hàm số có nghĩa là gì trong thế giới
+      toán học?
+
+      (Gợi ý: Hàm số tăng hay giảm?)
 
       '
   goals:
-  - 'Xác định yêu cầu: Xét tính đơn điệu của hàm số.'
-  - 'Nhận diện công thức hàm số: $f(x) = \frac{x^2 - x + 1}{x-1}$.'
+  - Hiểu rõ yêu cầu của bài toán.
+  - 'Nắm vững khái niệm "tính đơn điệu" (đồng biến, nghịch biến) của hàm số.
+
+    '
 '2':
   stage: '2'
   name: Lập kế hoạch giải bài
-  description: 'Tuyệt vời! Bây giờ, chúng ta sẽ cùng nhau lên kế hoạch "phá giải câu
-    bùa chú". Để xét tính đơn điệu của hàm số, chúng ta cần thực hiện những bước nào?
-    Hãy sắp xếp các bước sau theo thứ tự hợp lý:
-
-    1.  Tính đạo hàm của hàm số.
-
-    2.  Tìm tập xác định của hàm số.
-
-    3.  Lập bảng biến thiên.
-
-    4.  Kết luận về tính đơn điệu.
-
-    5.  Xét dấu đạo hàm.
+  description: 'Tuyệt vời! Bây giờ chúng ta đã sẵn sàng như Harry trước trận Quidditch.
+    Để chiến thắng bài toán này, chúng ta cần một kế hoạch thật chi tiết. Hãy cùng
+    nhau vạch ra các bước để tìm ra "bí mật" về tính đơn điệu của hàm số $f(x)$.
 
     '
   tasks:
   - id: '2.1'
-    description: 'Bước đầu tiên trong kế hoạch của chúng ta là gì? Tại sao bước này
-      lại quan trọng?
+    description: 'Bước đầu tiên để "khám phá" một hàm số là gì?
+
+      (Gợi ý: Hàm số có tồn tại ở "mọi ngóc ngách" không?)
 
       '
   - id: '2.2'
-    description: 'Sau khi tìm tập xác định, bước tiếp theo là gì?
+    description: 'Sau khi xác định được "lãnh địa" của hàm số, chúng ta cần gì để
+      biết nó đang "mạnh lên" hay "yếu đi"?
+
+      (Gợi ý: Một công cụ mạnh mẽ giúp chúng ta nhìn thấy sự thay đổi...)
 
       '
   - id: '2.3'
-    description: 'Bảng biến thiên giúp chúng ta điều gì trong việc xét tính đơn điệu
-      của hàm số?
+    description: 'Chúng ta sẽ sử dụng đạo hàm để làm gì? Sau khi tính đạo hàm, chúng
+      ta cần làm gì với nó?
+
+      '
+  - id: '2.4'
+    description: 'Sau khi có đạo hàm và biết được dấu của nó, bước cuối cùng để "hoàn
+      thành bản đồ" là gì?
+
+      (Gợi ý: Một bảng tóm tắt sự "biến hóa" của hàm số...)
 
       '
   goals:
-  - Nắm vững các bước xét tính đơn điệu của hàm số.
-  - Xây dựng kế hoạch giải bài chi tiết và logic.
+  - Xây dựng được kế hoạch giải bài toán một cách logic và khoa học.
+  - 'Nắm vững các bước cơ bản để xét tính đơn điệu của hàm số (tập xác định, đạo hàm,
+    bảng biến thiên).
+
+    '
 '3':
   stage: '3'
   name: Thực hiện giải bài
-  description: 'Bây giờ là lúc trổ tài phù thủy toán học! Chúng ta sẽ thực hiện từng
-    bước trong kế hoạch đã vạch ra. Hãy chuẩn bị tinh thần và sử dụng tất cả kiến
-    thức đã học để vượt qua thử thách này.
+  description: 'Giờ là lúc trổ tài phù thủy toán học! Hãy thực hiện từng bước theo
+    kế hoạch một cách cẩn thận và chính xác. Thầy/cô sẽ là "cây đũa phép" hỗ trợ bạn
+    khi cần thiết.
 
     '
   tasks:
   - id: '3.1'
-    description: '**Bước 1: Tìm Tập Xác Định**
-
-      Hàm số $f(x) = \\frac{x^2 - x + 1}{x-1}$ có phải là hàm phân thức không?
-
-      Điều kiện để một phân thức có nghĩa là gì? (Gợi ý: mẫu số phải khác 0).
-
-      Vậy, tập xác định của hàm số này là gì? Hãy viết tập xác định dưới dạng kí hiệu
-      toán học.
+    description: 'Tìm tập xác định $D$ của hàm số $f(x) = \frac{3-x}{x+1}$. Giá trị
+      nào của $x$ sẽ khiến hàm số này "biến mất"?
 
       '
   - id: '3.2'
-    description: '**Bước 2: Tính Đạo Hàm**
-
-      Để tính đạo hàm của $f(x) = \\frac{x^2 - x + 1}{x-1}$, chúng ta sử dụng quy
-      tắc đạo hàm nào? (Gợi ý: Đạo hàm của một thương có dạng $\\left( \\frac{u}{v}
-      \\right)'' = \\frac{u''v - uv''}{v^2}$).
-
-      Hãy tính đạo hàm $f''(x)$. Cho biết kết quả cuối cùng.
+    description: 'Tính đạo hàm $f''(x)$ của hàm số $f(x) = \frac{3-x}{x+1}$. Hãy nhớ
+      lại "bùa chú" (công thức) đạo hàm của một thương: $\\left( \\frac{u}{v} \\right)''
+      = \\frac{u''v - uv''}{v^2}$.
 
       '
   - id: '3.3'
-    description: '**Bước 3: Xét Dấu Đạo Hàm**
-
-      Chúng ta cần tìm các điểm mà $f''(x) = 0$ và các điểm mà $f''(x)$ không xác
-      định (nếu có, nhưng ở đây đạo hàm đã xác định với mọi x thuộc tập xác định của
-      hàm số ban đầu).
-
-      Giải phương trình $f''(x) = 0$. Tìm các nghiệm của phương trình.
+    description: 'Hãy "biến đổi" (rút gọn) biểu thức đạo hàm vừa tính được. $f''(x)
+      = ?$
 
       '
   - id: '3.4'
-    description: 'Lập bảng xét dấu cho $f''(x)$. Lưu ý đến tập xác định của hàm số.
-
-      $f''(x) > 0$ khi nào? $f''(x) < 0$ khi nào? Hãy cho biết khoảng giá trị của
-      x để $f''(x)$ dương và âm.
+    description: 'Xác định dấu của đạo hàm $f''(x)$. Đạo hàm này luôn mang dấu dương
+      hay dấu âm, hay nó có lúc "sáng" lúc "tối" (đổi dấu)? Giải thích tại sao.
 
       '
   - id: '3.5'
-    description: '**Bước 4: Tính Giới Hạn và Giá Trị Cực Trị (để vẽ BBT)**
-
-      Tính $\\lim_{x \\to \\pm \\infty} f(x)$ và $\\lim_{x \\to 1^+} f(x)$, $\\lim_{x
-      \\to 1^-} f(x)$.
-
-      Tính $f(0)$ và $f(2)$.
-
-      Các giới hạn và giá trị này giúp ta xác định điều gì trên bảng biến thiên?
+    description: 'Tính các giới hạn cần thiết để vẽ bảng biến thiên. Chúng ta cần
+      biết hàm số "hướng về đâu" khi $x$ tiến đến $+\\infty$, $-\\infty$, $-1^+$ và
+      $-1^-$.
 
       '
   - id: '3.6'
-    description: '**Bước 5: Bảng Biến Thiên**
-
-      Dựa vào các thông tin đã thu thập được, hãy hoàn thành bảng biến thiên của hàm
-      số.
-
-      Bảng biến thiên cần thể hiện các yếu tố nào?
-
-      '
-  - id: '3.7'
-    description: '**Bước 6: Kết Luận Tính Đơn Điệu**
-
-      Dựa vào bảng biến thiên, hãy kết luận về tính đồng biến và nghịch biến của hàm
-      số trên các khoảng xác định.
-
-      Hàm số đồng biến trên khoảng nào? Nghịch biến trên khoảng nào?
+    description: 'Dựa vào tất cả những thông tin đã thu thập được (tập xác định, đạo
+      hàm, dấu của đạo hàm, các giới hạn), hãy phác họa "bức tranh toàn cảnh" (bảng
+      biến thiên) của hàm số.
 
       '
   goals:
-  - Vận dụng các quy tắc tính đạo hàm.
-  - Giải phương trình và bất phương trình để xét dấu đạo hàm.
-  - Lập và đọc bảng biến thiên.
-  - Kết luận về tính đơn điệu của hàm số.
+  - Thực hiện các phép tính một cách chính xác và cẩn thận.
+  - Áp dụng đúng các công thức đạo hàm.
+  - Biết cách xét dấu của một biểu thức.
+  - Vẽ bảng biến thiên một cách chính xác và đầy đủ.
 '4':
   stage: '4'
   name: Kết luận và Đánh giá
-  description: 'Chúc mừng bạn đã hoàn thành "câu bùa chú" này! Chúng ta đã khám phá
-    thành công tính đơn điệu của hàm số $f(x) = \\frac{x^2 - x + 1}{x-1}$.
-
-    Hãy cùng nhìn lại quá trình giải bài và rút ra những bài học kinh nghiệm.
+  description: 'Hoan hô! Chúng ta đã "giải mã" thành công tính đơn điệu của hàm số
+    $f(x)$! Hãy cùng nhìn lại kết quả và rút ra những bài học quý giá từ cuộc phiêu
+    lưu toán học này.
 
     '
   tasks:
   - id: '4.1'
-    description: 'Hàm số đồng biến trên những khoảng nào?
+    description: 'Dựa vào bảng biến thiên, hãy cho biết hàm số $f(x) = \frac{3-x}{x+1}$
+      "mạnh lên" (đồng biến) hay "yếu đi" (nghịch biến) trên những khoảng nào?
 
       '
   - id: '4.2'
-    description: 'Hàm số nghịch biến trên những khoảng nào?
+    description: 'Vậy, kết luận cuối cùng về tính đơn điệu của hàm số $f(x) = \frac{3-x}{x+1}$
+      là gì?
 
       '
   - id: '4.3'
-    description: 'Bạn đã học được điều gì mới từ bài toán này?
-
-      '
-  - id: '4.4'
-    description: 'Nếu gặp một bài toán tương tự, bạn sẽ áp dụng những kiến thức và
-      kỹ năng nào?
+    description: 'Trong quá trình "luyện phép" giải bài toán này, bạn đã học được
+      những "bùa chú" (kiến thức) gì mới? Bạn còn cảm thấy "bối rối" ở bước nào không?
 
       '
   goals:
-  - Tổng kết kiến thức về tính đơn điệu của hàm số.
-  - Đánh giá quá trình giải bài và rút ra kinh nghiệm.
-  - Vận dụng kiến thức vào các bài toán tương tự.
+  - Nắm vững kết quả của bài toán và hiểu rõ ý nghĩa của nó.
+  - Rút ra những kinh nghiệm và bài học cho bản thân.
+  - 'Tự đánh giá được khả năng của bản thân và xác định những điểm cần cải thiện (ví
+    dụ: tính đạo hàm của một thương, vẽ bảng biến thiên).
+
+    '

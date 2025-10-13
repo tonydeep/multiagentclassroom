@@ -1,514 +1,263 @@
 '1':
   stage: '1'
   name: Tìm hiểu đề bài
-  description: 'Chào mừng các bạn đến với buổi học về tính đơn điệu của hàm số!
+  description: 'Chào mừng các bạn đến với bài toán về khảo sát hàm số!
 
-    Hôm nay, chúng ta sẽ cùng nhau chinh phục bài toán xét tính đơn điệu của hàm số
-    $f(x) = \frac{x-1}{x+1}$.
+    Hôm nay, chúng ta sẽ cùng nhau xét tính đơn điệu của hàm số $f(x) = \frac{x-1}{x+1}$.
 
-    Trước khi bắt đầu, hãy đọc kỹ đề bài và cho thầy/cô biết các bạn hiểu đề như thế
-    nào nhé.
+    Bài toán hỏi gì về hàm số này? Tính đơn điệu cho chúng ta biết điều gì về sự tăng
+    giảm của hàm số?
 
     '
   tasks:
   - id: '1.1'
-    description: 'Bài toán yêu cầu chúng ta làm gì với hàm số $f(x) = \frac{x-1}{x+1}$?
+    description: 'Bài toán yêu cầu xét tính gì của hàm số $f(x) = \frac{x-1}{x+1}$?
 
-      Hãy diễn đạt yêu cầu của bài toán bằng lời của bạn.
-
-      Nếu bạn vẽ đồ thị hàm số này, bạn sẽ hình dung ra điều gì về sự "lên xuống"
-      của nó?
-
-      Tại sao chúng ta cần xét sự "lên xuống" này? Ứng dụng của việc này trong thực
-      tế là gì? (Ví dụ: dự báo sự thay đổi của giá cả, tốc độ tăng trưởng...)
-
-      **Ví dụ đơn giản:** Hãy tưởng tượng bạn đang leo lên một ngọn đồi. Tính đơn
-      điệu giúp bạn biết bạn đang leo lên hay xuống dốc.
+      Tính đơn điệu (đồng biến, nghịch biến) cho ta biết điều gì về đồ thị của hàm
+      số? (Ví dụ: đồ thị đi lên hay đi xuống?)
 
       '
     notes:
-      pitfall: 'Học sinh có thể chỉ diễn đạt lại yêu cầu của bài toán một cách máy
-        móc mà không thực sự hiểu ý nghĩa của việc xét tính đơn điệu. Ví dụ, chỉ nói
-        "xét xem hàm số tăng hay giảm" mà không hiểu tại sao cần xét.
-
-        '
-      tip: 'Hãy tự hỏi: Nếu vẽ đồ thị, đồ thị sẽ đi lên hay đi xuống? Điều này có
-        ích gì trong thực tế?
-
-        '
+      pitfall: Không hiểu rõ yêu cầu 'xét tính đơn điệu', nhầm lẫn với cực trị hoặc
+        giá trị lớn nhất/nhỏ nhất.
+      tip: 'Đọc kỹ đề, gạch chân từ khóa ''đơn điệu''. Nhớ lại: đơn điệu = xét chiều
+        tăng/giảm.'
   - id: '1.2'
-    description: 'Trong bài toán này, những khái niệm nào là quan trọng và cần được
-      hiểu rõ? (Ví dụ: đơn điệu, đồng biến, nghịch biến, tập xác định...)
+    description: 'Hàm số $f(x) = \frac{x-1}{x+1}$ có dạng gì? (phân thức, đa thức...)
 
-      Giải thích ngắn gọn ý nghĩa của từng khái niệm đó.
-
-      Tại sao chúng ta cần tìm tập xác định trước khi xét tính đơn điệu? Điều gì sẽ
-      xảy ra nếu ta bỏ qua bước này?
-
-      **Ví dụ:** "Tập xác định" giống như "khu vực được phép" của hàm số. Nếu ta xét
-      tính đơn điệu ở "khu vực cấm", kết quả sẽ không có nghĩa.
+      Dạng hàm số này gợi ý những bước nào khi khảo sát? (Ví dụ: tìm tập xác định,
+      tính đạo hàm...)
 
       '
     notes:
-      pitfall: 'Học sinh có thể không hiểu rõ tầm quan trọng của tập xác định và bỏ
-        qua bước này, dẫn đến xét tính đơn điệu trên cả những khoảng mà hàm số không
-        tồn tại.
-
-        '
-      tip: 'Luôn nhớ: Tập xác định là "sân chơi" của hàm số. Chỉ xét tính đơn điệu
-        trên "sân chơi" đó thôi!
-
-        '
-  - id: '1.3'
-    description: 'Hãy cho biết hàm số $f(x) = \frac{x-1}{x+1}$ có dạng gì? Điều này
-      có gợi ý gì cho chúng ta về cách tiếp cận bài toán không?
-
-      Hàm số này có liên tục trên toàn bộ tập số thực không? Vì sao?
-
-      Nếu hàm số không liên tục, điều đó ảnh hưởng như thế nào đến tính đơn điệu của
-      nó?
-
-      **Liên hệ thực tế:** Hàm số liên tục giống như một con đường liền mạch. Nếu
-      đường bị đứt (không liên tục), việc xét "lên xuống" trên toàn bộ con đường sẽ
-      không còn ý nghĩa.
-
-      '
-    notes:
-      pitfall: 'Học sinh có thể không nhận ra hàm số là hàm phân thức hữu tỉ và bỏ
-        qua việc xét tính liên tục, dẫn đến những nhận định sai về tính đơn điệu trên
-        các khoảng không liên tục.
-
-        '
-      tip: 'Hàm số có "điểm gãy" không? Nếu có, hãy chia nhỏ khoảng xét để tránh sai
-        sót.
-
-        '
+      pitfall: Không nhận ra dạng hàm phân thức hữu tỷ, dẫn đến bỏ qua bước tìm tập
+        xác định hoặc xác định sai các bước cần thiết.
+      tip: Nhìn vào biểu thức. Nếu có phân số, căn thức, hoặc logarit, hãy nghĩ ngay
+        đến điều kiện xác định!
   goals:
-  - Hiểu rõ yêu cầu của bài toán về tính đơn điệu.
-  - Nắm vững các khái niệm liên quan đến tính đơn điệu của hàm số.
-  - Nhận diện dạng của hàm số và liên hệ với phương pháp giải phù hợp.
-  - Bước đầu hình dung về đồ thị và tính liên tục của hàm số.
-  - Liên hệ kiến thức về tính đơn điệu với các ứng dụng thực tế.
+  - 'Hiểu rõ yêu cầu bài toán: xét tính đơn điệu của hàm số.'
+  - 'Nhận diện dạng hàm số: phân thức hữu tỷ.'
+  - Nắm bắt ý nghĩa của tính đơn điệu đối với đồ thị hàm số.
 '2':
   stage: '2'
   name: Lập kế hoạch giải bài
-  description: 'Tuyệt vời! Chúng ta đã hiểu rõ đề bài.
+  description: 'Bây giờ, chúng ta sẽ cùng nhau xây dựng kế hoạch giải bài toán.
 
-    Bây giờ, hãy cùng nhau xây dựng một kế hoạch chi tiết để giải quyết bài toán này.
-
-    Kế hoạch này sẽ giúp chúng ta đi đúng hướng và không bỏ sót bất kỳ bước nào.
+    Các bước cần thiết để khảo sát tính đơn điệu của một hàm số là gì?
 
     '
   tasks:
   - id: '2.1'
-    description: 'Theo bạn, bước đầu tiên trong việc xét tính đơn điệu của một hàm
-      số là gì?
+    description: 'Bước đầu tiên để xét tính đơn điệu là gì?
 
-      (Gợi ý: Hàm số có "quyền" tồn tại ở những đâu?)
-
-      Tại sao việc tìm tập xác định lại quan trọng trước khi tìm hiểu về sự "lên xuống"
-      của hàm số?
-
-      Nếu hàm số không xác định tại một điểm, điểm đó có ảnh hưởng đến tính đơn điệu
-      của hàm số trên toàn bộ tập số thực không?
-
-      **Ví dụ:** Nếu bạn muốn biết con đường từ nhà đến trường có bao nhiêu dốc, bạn
-      cần biết con đường đó có tồn tại (xác định) hay không trước đã.
+      Tại sao ta cần tìm tập xác định trước khi tính đạo hàm? (Gợi ý: Đạo hàm chỉ
+      có nghĩa trên tập xác định của hàm số).
 
       '
     notes:
-      pitfall: 'Học sinh có thể xem nhẹ bước tìm tập xác định, cho rằng nó không liên
-        quan trực tiếp đến việc tìm khoảng đồng biến, nghịch biến.
-
-        '
-      tip: 'Tập xác định là "nền móng" của bài toán. Không có "nền móng", không thể
-        xây "nhà" (xét đơn điệu) được!
-
-        '
+      pitfall: Quên mất bước tìm tập xác định hoặc không hiểu tại sao cần tìm tập
+        xác định trước khi tính đạo hàm.
+      tip: Tập xác định là 'vùng đất' hàm số được phép sống. Đạo hàm chỉ tồn tại ở
+        nơi hàm số xác định.
   - id: '2.2'
-    description: 'Sau khi tìm được tập xác định, chúng ta cần làm gì để xác định tính
-      đơn điệu của hàm số?
+    description: 'Sau khi có tập xác định, bước tiếp theo là gì để biết hàm số tăng
+      hay giảm?
 
-      (Gợi ý: Công cụ nào giúp ta biết hàm số đang "leo dốc" hay "xuống dốc"?)
+      (Gợi ý: Sử dụng công cụ nào để xét sự biến thiên?)
 
       '
     notes:
-      pitfall: 'Học sinh có thể lúng túng không biết nên sử dụng công cụ nào sau khi
-        tìm tập xác định (ví dụ: không nhớ đến đạo hàm).
-
-        '
-      tip: '"Kim chỉ nam" cho sự "lên xuống" của hàm số là gì? (Gợi ý: Đạo hàm!)
-
-        '
+      pitfall: Không biết hoặc quên cách sử dụng đạo hàm để xét sự biến thiên của
+        hàm số.
+      tip: 'Đạo hàm là ''kim chỉ nam'' cho sự biến thiên: f''(x) > 0 => hàm tăng,
+        f''(x) < 0 => hàm giảm.'
   - id: '2.3'
-    description: 'Đạo hàm cho chúng ta biết điều gì về tính đơn điệu? Chúng ta cần
-      làm gì với đạo hàm để kết luận về tính đơn điệu?
+    description: 'Đạo hàm cho ta biết điều gì về sự biến thiên của hàm số?
 
-      Nếu đạo hàm dương, hàm số sẽ như thế nào? Nếu đạo hàm âm thì sao?
-
-      Tại sao dấu của đạo hàm lại liên quan đến việc hàm số tăng hay giảm?
-
-      **Ví dụ:** Đạo hàm giống như "kim chỉ nam" cho biết hướng dốc của con đường.
-      Nếu kim chỉ lên (dương), đường đang dốc lên.
+      Nếu đạo hàm dương thì hàm số như thế nào? Nếu đạo hàm âm thì hàm số như thế
+      nào?
 
       '
     notes:
-      pitfall: 'Học sinh có thể không hiểu rõ mối liên hệ giữa dấu của đạo hàm và
-        tính đơn điệu của hàm số, dẫn đến kết luận sai.
-
-        '
-      tip: 'Đạo hàm dương: Hàm số "leo dốc". Đạo hàm âm: Hàm số "xuống dốc".
-
-        '
+      pitfall: Không hiểu rõ mối liên hệ giữa dấu của đạo hàm và chiều biến thiên
+        của hàm số.
+      tip: f'(x) dương => hàm số đồng biến (đi lên); f'(x) âm => hàm số nghịch biến
+        (đi xuống).
   - id: '2.4'
-    description: 'Ngoài đạo hàm, còn yếu tố nào khác có thể giúp chúng ta hình dung
-      rõ hơn về sự biến thiên của hàm số không? (Gợi ý: Hàm số "chạy" đến đâu khi
-      x rất lớn hoặc rất bé? Điều gì xảy ra khi x tiến gần đến điểm không xác định?)
+    description: 'Ngoài đạo hàm, yếu tố nào khác giúp ta hiểu rõ hơn về hàm số và
+      vẽ đồ thị?
 
-      Các giới hạn này cho ta biết điều gì về "biên" của đồ thị hàm số?
+      (Gợi ý: Hàm số tiến đến giá trị nào khi x rất lớn hoặc rất bé? Hàm số có "nhảy"
+      ở đâu không?)
 
-      Tại sao việc xét giới hạn lại giúp chúng ta hiểu rõ hơn về sự biến thiên của
-      hàm số, đặc biệt là ở những điểm đặc biệt (vô cùng, không xác định)?
-
-      **Giải thích thêm:** Giới hạn cho biết "điểm đến" của hàm số khi x "đi mãi"
-      về một hướng. Điều này giúp ta hình dung được "dáng vẻ" của đồ thị ở "vùng biên".
-
-      ' 
+      '
     notes:
-      pitfall: 'Học sinh có thể bỏ qua việc xét giới hạn, đặc biệt là tại vô cùng
-        và tại điểm không xác định, dẫn đến bảng biến thiên không đầy đủ và kết luận
-        sai.
-
-        '
-      tip: 'Hàm số "chạy" đến đâu khi x "đi mãi"? (Gợi ý: Giới hạn!)
-
-        '
-  - id: '2.5'
-    description: "Hãy tóm tắt lại các bước cần thực hiện để giải bài toán này.\n(Ví\
-      \ dụ: 1. Tìm tập xác định. 2. Tính đạo hàm...)\nBạn có thể vẽ sơ đồ tư duy để\
-      \ thể hiện mối liên hệ giữa các bước này không?\nSắp xếp các bước theo thứ tự\
-      \ logic. Bước nào quan trọng nhất? Tại sao?\n**Checklist:**\n  * Tìm tập xác\
-      \ định.\n  * Tính đạo hàm.\n  * Xét dấu đạo hàm.\n  * Tính giới hạn tại vô cùng\
-      \ và điểm không xác định.\n  * Lập bảng biến thiên.\n  * Kết luận.\n"
-    notes:
-      pitfall: 'Học sinh có thể liệt kê các bước một cách rời rạc mà không hiểu mối
-        liên hệ giữa chúng.
-
-        '
-      tip: 'Vẽ sơ đồ tư duy: Các bước liên kết với nhau như thế nào? Bước nào quan
-        trọng nhất?
-
-        '
+      pitfall: Không nhận ra vai trò của giới hạn trong việc xác định tiệm cận và
+        hình dáng đồ thị.
+      tip: 'Giới hạn giúp ta ''nhìn'' hàm số ở vô cùng và những điểm đặc biệt (ví
+        dụ: mẫu bằng 0). Nó cho biết các đường tiệm cận.'
   goals:
-  - Xây dựng được một kế hoạch giải bài toán chi tiết và logic.
-  - Nắm vững các bước cơ bản trong việc xét tính đơn điệu của hàm số.
-  - Biết cách sử dụng đạo hàm và giới hạn để phân tích sự biến thiên của hàm số.
-  - Rèn luyện tư duy phản biện thông qua việc trả lời các câu hỏi 'tại sao'.
-  - Phát triển kỹ năng tóm tắt và sắp xếp thông tin.
+  - Xây dựng kế hoạch giải bài một cách logic và đầy đủ.
+  - Giải thích được tầm quan trọng của từng bước trong kế hoạch.
 '3':
   stage: '3'
   name: Thực hiện giải bài
-  description: 'Kế hoạch đã sẵn sàng! Bây giờ là lúc chúng ta bắt tay vào thực hiện
-    từng bước một.
-
-    Hãy cẩn thận và chính xác trong từng phép tính nhé.
+  description: 'Bây giờ, chúng ta sẽ thực hiện kế hoạch giải bài một cách cẩn thận
+    và chính xác.
 
     '
   tasks:
   - id: '3.1'
-    description: 'Bước đầu tiên là tìm tập xác định của hàm số $f(x) = \frac{x-1}{x+1}$.
+    description: 'Tìm tập xác định của $f(x) = \frac{x-1}{x+1}$.
 
-      Hàm số này không xác định khi mẫu số bằng 0. Vậy, tập xác định của hàm số là
-      gì?
-
-      Hãy viết tập xác định dưới dạng kí hiệu toán học.
-
-      Kiểm tra lại: Giá trị nào của $x$ làm cho mẫu số bằng 0? Loại bỏ giá trị đó
-      khỏi tập số thực.
-
-      **Nhắc lại:** Mẫu số KHÔNG được bằng 0.
+      Mẫu số có được phép bằng 0 không? Tại sao? Giá trị nào của x làm cho mẫu số
+      bằng 0?
 
       '
     notes:
-      pitfall: 'Học sinh có thể quên điều kiện mẫu số khác 0 hoặc giải sai phương
-        trình mẫu số bằng 0.
-
-        '
-      tip: 'Mẫu số KHÔNG được bằng 0! Tìm giá trị làm cho mẫu số bằng 0 và loại bỏ
-        chúng.
-
-        '
+      pitfall: Tìm tập xác định sai do quên điều kiện mẫu khác 0 hoặc giải phương
+        trình mẫu = 0 sai.
+      tip: Mẫu số PHẢI khác 0! Giải phương trình cẩn thận, kiểm tra lại bằng cách
+        thay nghiệm vào mẫu.
   - id: '3.2'
-    description: 'Tiếp theo, chúng ta cần tính đạo hàm của hàm số $f(x) = \frac{x-1}{x+1}$.
+    description: 'Tính đạo hàm $f''(x)$ của $f(x) = \frac{x-1}{x+1}$.
 
-      Bạn còn nhớ công thức tính đạo hàm của một thương không?
-
-      Hãy áp dụng công thức đó để tìm $f''(x)$. Gợi ý: $\left(\frac{u}{v}\right)''
-      = \frac{u''v - uv''}{v^2}$
-
-      **Bài tập nhỏ:** Tính đạo hàm của $u = x-1$ và $v = x+1$ trước.
-
-      Sau đó áp dụng công thức đạo hàm của thương.
+      Nhắc lại quy tắc đạo hàm phân thức: $\left(\frac{u}{v}\right)'' = \frac{u''v
+      - uv''}{v^2}$. Áp dụng quy tắc này để tính $f''(x)$.
 
       '
     notes:
-      pitfall: 'Học sinh có thể sai sót khi áp dụng công thức đạo hàm của thương,
-        đặc biệt là về dấu và thứ tự các phép toán.
-
-        '
-      tip: 'Cẩn thận với dấu! Viết rõ từng bước, đặc biệt khi tính đạo hàm của u và
-        v.
-
-        '
-  - id: 3.2.1
-    description: 'Bạn đã tính được đạo hàm $f''(x)$ là bao nhiêu?
-
-      Chúng ta sẽ cùng kiểm tra kết quả.
-
-      Nếu bạn gặp khó khăn, hãy thử làm lại từng bước một, chú ý đến dấu và thứ tự
-      các phép toán.
-
-      **Gợi ý:** $f''(x) = \frac{(1)(x+1) - (x-1)(1)}{(x+1)^2}$. Rút gọn biểu thức
-      này.
-
-      '
-    notes:
-      pitfall: 'Tính toán sai khi rút gọn biểu thức đạo hàm.
-
-        '
-      tip: 'Kiểm tra kỹ từng bước rút gọn. Sử dụng công cụ tính đạo hàm trực tuyến
-        để đối chiếu kết quả.
-
-        '
-  - id: 3.2.2
-    description: 'Để chắc chắn hơn, bạn có thể sử dụng công cụ tính đạo hàm trực tuyến
-      để kiểm tra lại kết quả của mình.
-
-      Tuy nhiên, hãy nhớ rằng việc tự tính toán vẫn là quan trọng nhất để rèn luyện
-      kỹ năng.
-
-      **Lưu ý:** Nếu kết quả trên công cụ khác với kết quả của bạn, hãy xem lại từng
-      bước tính toán của mình.
-
-      '
-    notes:
-      pitfall: 'Chỉ dựa vào công cụ tính đạo hàm trực tuyến mà không tự kiểm tra lại
-        các bước tính toán.
-
-        '
-      tip: 'Công cụ chỉ là để kiểm tra. Quan trọng nhất là tự mình tính toán và hiểu
-        rõ các bước.
-
-        '
-  - id: 3.2.3
-    description: "**Luyện tập thêm:** Tính đạo hàm của các hàm số sau:\n  * $y = x^3\
-      \ + 2x^2 - x + 5$\n  * $y = \\frac{1}{x}$\n  * $y = \\sqrt{x}$\n"
-    notes:
-      pitfall: 'Mắc lỗi khi tính đạo hàm của các hàm số cơ bản.
-
-        '
-      tip: 'Ôn lại các công thức đạo hàm cơ bản. Làm nhiều bài tập để rèn luyện kỹ
-        năng.
-
-        '
+      pitfall: Tính đạo hàm sai do áp dụng sai công thức đạo hàm của phân thức hoặc
+        tính toán sai các đạo hàm đơn giản (u', v').
+      tip: Viết đúng công thức đạo hàm phân thức ra giấy trước khi áp dụng. Kiểm tra
+        kỹ từng bước tính đạo hàm u' và v'.
   - id: '3.3'
-    description: 'Bây giờ, hãy xét dấu của đạo hàm $f''(x)$.
+    description: 'Xét dấu của đạo hàm $f''(x)$.
 
-      Với mọi $x$ thuộc tập xác định, $f''(x)$ luôn dương, luôn âm hay đổi dấu? Điều
-      này có ý nghĩa gì về tính đơn điệu của hàm số?
-
-      Giải thích tại sao dấu của đạo hàm lại quyết định tính đồng biến hay nghịch
-      biến của hàm số.
-
-      **Câu hỏi:** Tại sao $(x+1)^2$ luôn dương? Điều này có nghĩa là gì về dấu của
-      $f''(x)$?
-
-      **Lý giải:** Một số bình phương luôn dương (hoặc bằng 0). Vì vậy, $(x+1)^2$
-      luôn dương khi $x \neq -1$. Do đó, dấu của $f''(x)$ chỉ phụ thuộc vào tử số
-      (là một số dương).
+      $f''(x)$ luôn dương, luôn âm, hay đổi dấu? Điều này có nghĩa gì về chiều biến
+      thiên của hàm số? Tại sao dấu của đạo hàm lại quyết định chiều biến thiên?
 
       '
     notes:
-      pitfall: 'Học sinh có thể không giải thích được tại sao dấu của đạo hàm lại
-        quyết định tính đơn điệu hoặc nhầm lẫn giữa dấu của đạo hàm và chiều biến
-        thiên của hàm số.
-
-        '
-      tip: 'Đạo hàm dương => Hàm số tăng. Đạo hàm âm => Hàm số giảm.
-
-        '
+      pitfall: Xét dấu đạo hàm sai hoặc không biện luận được về chiều biến thiên của
+        hàm số dựa trên dấu đạo hàm.
+      tip: Nếu đạo hàm luôn dương => hàm luôn tăng. Nếu đạo hàm luôn âm => hàm luôn
+        giảm. Nếu đổi dấu => có cực trị.
   - id: '3.4'
-    description: 'Để có cái nhìn đầy đủ hơn về sự biến thiên của hàm số, chúng ta
-      sẽ tính các giới hạn sau:
+    description: 'Tính các giới hạn sau: $\lim_{x \to +\infty} f(x)$, $\lim_{x \to
+      -\infty} f(x)$, $\lim_{x \to -1^+} f(x)$, $\lim_{x \to -1^-} f(x)$.
 
-      $\lim_{x \to +\infty} f(x)$, $\lim_{x \to -\infty} f(x)$, $\lim_{x \to -1^+}
-      f(x)$, $\lim_{x \to -1^-} f(x)$.
-
-      Hãy tính các giới hạn này.
-
-      Giới hạn tại $x \to -1$ có ý nghĩa gì về đồ thị hàm số?
-
-      **Gợi ý:** Chia cả tử và mẫu cho $x$ khi tính giới hạn tại vô cùng.
+      Các giới hạn này cho ta biết điều gì về các đường tiệm cận của đồ thị hàm số?
+      Tại sao ta cần tính giới hạn khi x tiến tới -1?
 
       '
     notes:
-      pitfall: 'Học sinh gặp khó khăn trong việc tính giới hạn tại vô cùng và tại
-        điểm không xác định, đặc biệt là khi chia cả tử và mẫu cho x.
+      pitfall: Tính giới hạn sai do nhầm lẫn các dạng vô định hoặc không biết cách
+        xử lý các giới hạn khi x tiến tới vô cùng hoặc điểm không xác định.
+      tip: Nhớ lại các dạng vô định (0/0, ∞/∞,...). Chia cả tử và mẫu cho lũy thừa
+        cao nhất của x khi x tiến tới vô cùng.
+  - id: 3.5.1
+    description: 'Lập bảng biến thiên. Đầu tiên, kẻ bảng gồm các hàng cho x, f''(x),
+      và f(x).
 
-        '
-      tip: 'Khi x tiến tới vô cùng, hãy chia cả tử và mẫu cho lũy thừa bậc cao nhất
-        của x.
-
-        '
-  - id: '3.5'
-    description: "Dựa vào tập xác định, đạo hàm và các giới hạn, hãy lập bảng biến\
-      \ thiên của hàm số.\nBảng biến thiên này sẽ giúp chúng ta hình dung rõ ràng\
-      \ về sự đồng biến và nghịch biến của hàm số.\n**Hướng dẫn chi tiết:**\n  * **Bước\
-      \ 1:** Vẽ bảng với các hàng: $x$, $f'(x)$, $f(x)$.\n  * **Bước 2:** Điền các\
-      \ giá trị $x$ đặc biệt (vô cùng: $-\\infty$, $+\\infty$; điểm không xác định:\
-      \ -1) vào hàng $x$, theo thứ tự từ nhỏ đến lớn. Chú ý kí hiệu $\\parallel$ tại\
-      \ điểm không xác định.\n  * **Bước 3:** Xét dấu $f'(x)$ trên từng khoảng xác\
-      \ định và điền vào hàng $f'(x)$. (Dấu \"+\" nếu $f'(x) > 0$, dấu \"-\" nếu $f'(x)\
-      \ < 0$, \"0\" nếu $f'(x) = 0$).\n  * **Bước 4:** Tính và điền các giới hạn vào\
-      \ hàng $f(x)$.\n  * **Bước 5:** Dựa vào dấu của $f'(x)$, vẽ mũi tên thể hiện\
-      \ sự biến thiên của hàm số (lên nếu đồng biến, xuống nếu nghịch biến).\n**Mẹo\
-      \ nhỏ:** Nếu bạn gặp khó khăn, hãy vẽ riêng từng phần của bảng biến thiên, sau\
-      \ đó ghép lại.\n"
-    notes:
-      pitfall: 'Học sinh có thể lúng túng khi lập bảng biến thiên, đặc biệt là khi
-        điền các giá trị đặc biệt (vô cùng, điểm không xác định) và xét dấu của đạo
-        hàm.
-
-        '
-      tip: 'Chia nhỏ bảng biến thiên thành các phần. Điền từng giá trị, xét dấu cẩn
-        thận.
-
-        '
-  - id: '3.6'
-    description: 'Từ bảng biến thiên, bạn có thể kết luận gì về tính đơn điệu của
-      hàm số $f(x) = \frac{x-1}{x+1}$?
-
-      Hàm số đồng biến trên những khoảng nào? Nghịch biến trên những khoảng nào?
-
-      Kết luận của bạn có phù hợp với hình dung ban đầu về đồ thị hàm số (ở task 1.1)
-      không?
-
-      **Nhắc lại:** Hàm số đồng biến khi đi từ trái sang phải, đồ thị đi lên. Hàm
-      số nghịch biến khi đi từ trái sang phải, đồ thị đi xuống.
+      Điền tập xác định lên hàng của x. Giá trị nào của x làm cho f''(x) = 0 hoặc
+      không xác định?
 
       '
     notes:
-      pitfall: 'Đưa ra kết luận sai về tính đơn điệu do đọc sai bảng biến thiên hoặc
-        không hiểu mối liên hệ giữa bảng biến thiên và tính đơn điệu.
+      pitfall: Điền sai tập xác định vào bảng biến thiên, thiếu các điểm không xác
+        định của hàm số hoặc đạo hàm.
+      tip: Tập xác định của hàm số và đạo hàm phải được thể hiện đầy đủ trên bảng
+        biến thiên.
+  - id: 3.5.2
+    description: 'Tiếp theo, điền dấu của f''(x) lên hàng tương ứng.
 
-        '
-      tip: '"Đọc" bảng biến thiên từ trái sang phải. Mũi tên lên: Đồng biến. Mũi tên
-        xuống: Nghịch biến.
+      Chú ý khoảng nào f''(x) dương, khoảng nào âm. Dựa vào dấu của f''(x), vẽ mũi
+      tên thể hiện chiều biến thiên của hàm số.
 
-        '
+      '
+    notes:
+      pitfall: Điền sai dấu của đạo hàm vào bảng biến thiên, dẫn đến kết luận sai
+        về chiều biến thiên.
+      tip: Kiểm tra dấu của đạo hàm trên từng khoảng bằng cách chọn một giá trị đại
+        diện và thay vào đạo hàm.
+  - id: 3.5.3
+    description: 'Cuối cùng, điền các giới hạn đã tính vào hàng của f(x) và hoàn thành
+      bảng biến thiên.
+
+      Nếu chưa quen, hãy tham khảo bảng biến thiên mẫu sau:
+
+
+      | $x$    | $-\infty$ |       $-1$       | $+\infty$ |
+
+      | :------- | :-------: | :----------------: | :-------: |
+
+      | $f''(x)$ |    $+$    |          $\|$          |    $+$    |
+
+      | $f(x)$  |     $1$ $\nearrow$      | $\|$  |    $\searrow$ $1$ |
+
+      '
+    notes:
+      pitfall: Điền sai các giới hạn vào bảng biến thiên, làm cho bảng biến thiên
+        không chính xác.
+      tip: Các giá trị giới hạn phải khớp với chiều biến thiên đã xác định. Mũi tên
+        phải đi đúng hướng.
   goals:
-  - Tìm được tập xác định của hàm số.
-  - Tính toán chính xác đạo hàm của hàm số.
-  - Xét dấu đạo hàm và kết luận về tính đơn điệu.
-  - Tính toán các giới hạn cần thiết.
-  - Lập bảng biến thiên và đưa ra kết luận cuối cùng.
-  - Củng cố kỹ năng tính toán đạo hàm thông qua luyện tập và kiểm tra.
-  - Nâng cao kỹ năng lập bảng biến thiên bằng cách chia nhỏ và có hướng dẫn cụ thể.
+  - Tìm tập xác định một cách chính xác.
+  - Tính đạo hàm đúng công thức và không mắc lỗi.
+  - Xét dấu đạo hàm và giải thích ý nghĩa của nó đối với sự biến thiên của hàm số.
+  - Tính giới hạn và liên hệ chúng với các đường tiệm cận của đồ thị.
+  - Lập bảng biến thiên hoàn chỉnh và chính xác.
 '4':
   stage: '4'
   name: Kết luận và Đánh giá
-  description: 'Chúc mừng các bạn đã hoàn thành bài toán!
+  description: 'Chúc mừng bạn đã giải xong bài toán!
 
-    Bây giờ, chúng ta sẽ cùng nhau nhìn lại toàn bộ quá trình giải và rút ra những
-    bài học kinh nghiệm.
+    Bây giờ, chúng ta sẽ cùng nhau đưa ra kết luận và xem lại những gì đã học được.
 
     '
   tasks:
   - id: '4.1'
-    description: 'Hãy tóm tắt lại các bước chính trong việc xét tính đơn điệu của
-      một hàm số.
+    description: 'Dựa vào bảng biến thiên, hãy cho biết hàm số $f(x) = \frac{x-1}{x+1}$
+      đồng biến hay nghịch biến trên các khoảng nào?
 
-      Bạn có thể tự tạo một checklist để đảm bảo không bỏ sót bước nào không?
+      Giải thích tại sao lại kết luận như vậy, dựa vào dấu của đạo hàm trên các khoảng
+      đó.
 
       '
     notes:
-      pitfall: 'Tóm tắt các bước một cách chung chung, không đủ chi tiết để áp dụng
-        cho các bài toán cụ thể.
-
-        '
-      tip: 'Tạo checklist chi tiết: Từng bước, từng việc cần làm.
-
-        '
+      pitfall: Đọc bảng biến thiên sai, kết luận sai về tính đơn điệu của hàm số.
+      tip: 'Nhìn vào mũi tên: lên => đồng biến, xuống => nghịch biến. Khoảng nào có
+        mũi tên như vậy thì hàm số đơn điệu trên khoảng đó.'
   - id: '4.2'
-    description: 'Bạn có thể áp dụng phương pháp này cho những dạng hàm số nào khác?
+    description: 'Vẽ phác họa đồ thị của hàm số $f(x) = \frac{x-1}{x+1}$.
 
-      Ví dụ, hàm số $g(x) = x^3 - 3x$ có thể xét tính đơn điệu tương tự không?
-
-      **Thử thách:** Tìm một hàm số khác mà bạn có thể áp dụng phương pháp này.
+      Chú ý đến các đường tiệm cận (đứng và ngang) và chiều biến thiên của hàm số.
+      Tiệm cận đứng là gì và nó liên quan đến giới hạn nào? Tiệm cận ngang là gì và
+      nó liên quan đến giới hạn nào?
 
       '
     notes:
-      pitfall: 'Không nhận ra rằng phương pháp này có thể áp dụng cho nhiều dạng hàm
-        số khác nhau.
-
-        '
-      tip: 'Phương pháp này "đa năng" đấy! Hãy thử với các hàm số khác nhau.
-
-        '
+      pitfall: Vẽ đồ thị sai do không xác định đúng tiệm cận hoặc không thể hiện đúng
+        chiều biến thiên.
+      tip: Vẽ các đường tiệm cận trước. Sau đó vẽ đồ thị 'bám' theo tiệm cận và tuân
+        theo chiều biến thiên trên bảng biến thiên.
   - id: '4.3'
-    description: 'Trong quá trình giải bài, bạn gặp khó khăn ở bước nào? Tại sao?
+    description: 'Bạn đã học được gì mới từ bài toán này?
 
-      Bạn đã vượt qua khó khăn đó như thế nào?
-
-      '
-    notes:
-      pitfall: 'Không xác định được khó khăn cụ thể gặp phải trong quá trình giải
-        bài.
-
-        '
-      tip: 'Bước nào làm bạn "mắc kẹt" nhất? Tại sao?
-
-        '
-  - id: '4.4'
-    description: 'Nếu được làm lại bài toán này, bạn sẽ làm khác đi ở bước nào không?
-      Tại sao?
-
-      Bạn có thể tìm một cách giải khác cho bài toán này không? (Ví dụ: sử dụng định
-      nghĩa của hàm số đơn điệu)
-
-      **Gợi ý:** Định nghĩa hàm số đồng biến: $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$.
-      Hãy thử chọn hai giá trị $x_1$ và $x_2$ bất kỳ thuộc tập xác định, sao cho $x_1
-      < x_2$, rồi so sánh $f(x_1)$ và $f(x_2)$.
+      Phần nào cảm thấy dễ hiểu, phần nào còn cần luyện tập thêm? Bài toán này giúp
+      bạn hiểu rõ hơn về mối liên hệ giữa đạo hàm, giới hạn và đồ thị hàm số như thế
+      nào?
 
       '
     notes:
-      pitfall: 'Không chủ động tìm kiếm các cách giải khác hoặc không nhận ra rằng
-        có nhiều cách tiếp cận khác nhau cho cùng một bài toán.
-
-        '
-      tip: '"Đường nào" khác dẫn đến "Rome"? (Gợi ý: Định nghĩa đơn điệu)
-
-        '
-  - id: '4.5'
-    description: 'Bạn học được điều gì mới từ bài toán này?
-
-      Điều này có thể giúp bạn giải quyết những bài toán nào khác?
-
-      **Ứng dụng:** Tính đơn điệu được sử dụng để tìm cực trị của hàm số. Bạn có thể
-      tìm hiểu thêm về ứng dụng này.
-
-      '
-    notes:
-      pitfall: 'Không liên hệ kiến thức về tính đơn điệu với các ứng dụng khác trong
-        toán học.
-
-        '
-      tip: 'Tính đơn điệu "mở đường" cho việc tìm cực trị đấy!
-
-        '
+      pitfall: Không tự đánh giá được điểm mạnh, điểm yếu của bản thân sau bài học.
+      tip: Thành thật với bản thân! Ghi lại những phần đã hiểu rõ và những phần cần
+        luyện tập thêm. Hỏi thầy cô nếu cần.
   goals:
-  - Củng cố kiến thức về tính đơn điệu của hàm số.
-  - Rút ra kinh nghiệm từ quá trình giải bài.
-  - Biết cách áp dụng phương pháp giải cho các bài toán tương tự.
-  - Phát triển tư duy phản biện và khả năng tự đánh giá.
-  - Khuyến khích tìm tòi các cách giải khác nhau và liên hệ với các bài toán khác.
+  - Đưa ra kết luận chính xác về tính đơn điệu của hàm số dựa trên bảng biến thiên.
+  - Vẽ phác họa đồ thị hàm số, thể hiện đúng các đặc điểm quan trọng (tiệm cận, chiều
+    biến thiên).
+  - Tự đánh giá kiến thức và kỹ năng đã đạt được sau bài học.
+  - Nắm vững kiến thức về xét tính đơn điệu của hàm số và mối liên hệ giữa các yếu
+    tố (đạo hàm, giới hạn, đồ thị).

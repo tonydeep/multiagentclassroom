@@ -1,6 +1,9 @@
 # SAGE
 
-A Flask-based interactive learning environment supporting real-time discussions between students and multiple AI agents.
+An interactive learning environment supporting real-time discussions between students and multiple AI agents.
+
+# Demo (May take some time to load)
+![Demo](demo.gif)
 
 ## Setup and Installation
 

@@ -2,27 +2,65 @@
 
 An interactive learning environment supporting real-time discussions between students and multiple AI agents.
 
-## 🎉 NEW: Claude Agent SDK Implementation
+## 🚀 **NEW: Professional FastAPI + Next.js Implementation**
 
-**We now have a simplified demo using Claude Agent SDK!** This new implementation replaces CrewAI with Anthropic's Claude Agent SDK for better performance and easier maintenance.
+**We now have a production-ready implementation using FastAPI and Next.js!** This modern stack offers superior performance, type safety, and developer experience.
 
-👉 **[See README_DEMO.md for the new Claude Agent SDK demo](README_DEMO.md)**
-
-### Quick Start (Claude Agent SDK Demo)
+### ⚡ Quick Start (Recommended)
 
 ```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-npm install -g @anthropic-ai/claude-code
+# 1. Clone and setup
+git clone <repository-url>
+cd multiagentclassroom
 
-# 2. Set up your API key
-echo "ANTHROPIC_API_KEY=your_key_here" > .env
+# 2. Set up environment
+cp .env.example .env
+# Edit .env and add your ANTHROPIC_API_KEY
 
-# 3. Run the demo
-python demo_app.py
+# 3. Run with one command
+./start.sh
 ```
 
-Then open: **http://localhost:5001**
+Then open: **http://localhost:3000**
+
+👉 **[Full documentation: README_FASTAPI_NEXTJS.md](README_FASTAPI_NEXTJS.md)**
+
+### 🎯 Features
+
+- ✅ **FastAPI** backend with native WebSocket support
+- ✅ **Next.js 14** with TypeScript and App Router
+- ✅ **Tailwind CSS** for modern, responsive UI
+- ✅ **Type-safe** end-to-end (Pydantic + TypeScript)
+- ✅ **Auto-generated** API documentation (Swagger UI)
+- ✅ **Real-time** agent status updates
+- ✅ **Production-ready** architecture
+
+### 📊 Tech Stack Comparison
+
+| Stack | Type Safety | Performance | DX | Production Ready |
+|-------|-------------|-------------|----| -----------------|
+| **FastAPI + Next.js** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Flask + Socket.IO | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+| CrewAI (Original) | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+
+---
+
+## 📚 Other Implementations
+
+We also have simpler implementations for learning and demonstration:
+
+### Claude Agent SDK Demo (Flask)
+
+Simplified demo using Flask + Socket.IO. Good for learning.
+
+👉 **[See README_DEMO.md](README_DEMO.md)**
+
+```bash
+# Quick start
+pip install -r requirements.txt
+python demo_app.py
+# Open: http://localhost:5001
+```
 
 ---
 

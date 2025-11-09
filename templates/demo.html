@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent Classroom - Claude SDK Demo</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Setup screen */
+        .setup-screen {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .setup-screen.hidden {
+            display: none;
+        }
+
+        .problem-selection {
+            margin: 30px 0;
+        }
+
+        .problem-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .problem-card.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .problem-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .problem-card p {
+            color: #666;
+            white-space: pre-line;
+        }
+
+        .user-input {
+            margin: 20px 0;
+        }
+
+        .user-input input {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Chat screen */
+        .chat-screen {
+            display: none;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-screen.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .chat-header h2 {
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .agents-status {
+            display: flex;
+            gap: 15px;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .agent-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .agent-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        .agent-indicator.idle {
+            background: #6c757d;
+        }
+
+        .agent-indicator.thinking {
+            background: #ffc107;
+            animation: pulse 1s infinite;
+        }
+
+        .agent-indicator.typing {
+            background: #28a745;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-header {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .message-bubble {
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.user .message-bubble {
+            background: #667eea;
+            color: white;
+            margin-left: auto;
+        }
+
+        .message.agent .message-bubble {
+            background: white;
+            border: 1px solid #e9ecef;
+        }
+
+        .message.system .message-bubble {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            text-align: center;
+            margin: 0 auto;
+            font-style: italic;
+            color: #856404;
+        }
+
+        .agent-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .agent-harry { background: #dc3545; }
+        .agent-hermione { background: #0d6efd; }
+        .agent-ron { background: #fd7e14; }
+
+        .input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn-send {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-send:hover:not(:disabled) {
+            transform: scale(1.05);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Multi-Agent Classroom</h1>
+            <p>Powered by Claude Agent SDK</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Setup Screen -->
+            <div class="setup-screen" id="setupScreen">
+                <h2>Chọn bài toán để bắt đầu</h2>
+
+                <div class="problem-selection" id="problemSelection">
+                    {% for problem in problems %}
+                    <div class="problem-card" data-problem-id="{{ problem.id }}">
+                        <h3>{{ problem.title }}</h3>
+                        <p>{{ problem.problem }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="user-input">
+                    <input type="text" id="userName" placeholder="Nhập tên của bạn..." value="Student">
+                </div>
+
+                <button class="btn btn-primary" id="startBtn" disabled>Bắt đầu học</button>
+            </div>
+
+            <!-- Chat Screen -->
+            <div class="chat-screen" id="chatScreen">
+                <div class="chat-header">
+                    <h2 id="chatProblemTitle">Phương trình bậc hai</h2>
+                    <p id="chatProblemText">Giải phương trình: x² + 5x + 6 = 0</p>
+                </div>
+
+                <div class="agents-status">
+                    <div class="agent-badge">
+                        <span class="agent-indicator idle" id="status-Harry"></span>
+                        <span>Harry</span>
+                    </div>
+                    <div class="agent-badge">
+                        <span class="agent-indicator idle" id="status-Hermione"></span>
+                        <span>Hermione</span>
+                    </div>
+                    <div class="agent-badge">
+                        <span class="agent-indicator idle" id="status-Ron"></span>
+                        <span>Ron</span>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message system">
+                        <div class="message-bubble">
+                            Chào mừng đến với lớp học! Ba trợ lý AI (Harry, Hermione, và Ron) sẽ giúp bạn giải bài toán.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-group">
+                        <input type="text" id="messageInput" placeholder="Nhập câu hỏi hoặc ý kiến của bạn...">
+                        <button class="btn-send" id="sendBtn">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let socket = null;
+        let sessionId = null;
+        let selectedProblemId = null;
+        let userName = 'Student';
+
+        // Initialize Socket.IO
+        function initSocket() {
+            socket = io();
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+            });
+
+            socket.on('agent_status', (data) => {
+                console.log('Agent status:', data);
+                updateAgentStatus(data.agent_name, data.status);
+            });
+
+            socket.on('new_message', (data) => {
+                console.log('New message:', data);
+                if (data.source === 'agent') {
+                    addMessage(data.content.sender_name, data.content.text, 'agent');
+                }
+            });
+
+            socket.on('system_status', (data) => {
+                console.log('System status:', data);
+                addMessage('System', data.message, 'system');
+            });
+
+            socket.on('error', (data) => {
+                console.error('Error:', data);
+                addMessage('System', `Lỗi: ${data.error}`, 'system');
+            });
+        }
+
+        // Problem selection
+        document.querySelectorAll('.problem-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.problem-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedProblemId = card.dataset.problemId;
+                document.getElementById('startBtn').disabled = false;
+            });
+        });
+
+        // Start session
+        document.getElementById('startBtn').addEventListener('click', async () => {
+            userName = document.getElementById('userName').value || 'Student';
+
+            if (!selectedProblemId) {
+                alert('Vui lòng chọn một bài toán!');
+                return;
+            }
+
+            try {
+                // Show loading
+                document.getElementById('startBtn').disabled = true;
+                document.getElementById('startBtn').textContent = 'Đang khởi tạo...';
+
+                // Start session
+                const response = await fetch('/api/start-session', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        problem_id: selectedProblemId,
+                        user_name: userName
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    sessionId = data.session_id;
+
+                    // Update chat header
+                    document.getElementById('chatProblemTitle').textContent = data.problem.title;
+                    document.getElementById('chatProblemText').textContent = data.problem.problem;
+
+                    // Join session room
+                    socket.emit('join_session', {session_id: sessionId});
+
+                    // Show chat screen
+                    document.getElementById('setupScreen').classList.add('hidden');
+                    document.getElementById('chatScreen').classList.add('active');
+                } else {
+                    alert('Không thể khởi tạo phiên học: ' + data.error);
+                    document.getElementById('startBtn').disabled = false;
+                    document.getElementById('startBtn').textContent = 'Bắt đầu học';
+                }
+            } catch (error) {
+                console.error('Error starting session:', error);
+                alert('Đã xảy ra lỗi: ' + error.message);
+                document.getElementById('startBtn').disabled = false;
+                document.getElementById('startBtn').textContent = 'Bắt đầu học';
+            }
+        });
+
+        // Send message
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message || !sessionId) return;
+
+            // Add user message to UI
+            addMessage(userName, message, 'user');
+
+            // Send via socket
+            socket.emit('send_message', {
+                session_id: sessionId,
+                sender_name: userName,
+                message: message
+            });
+
+            // Clear input
+            input.value = '';
+        }
+
+        document.getElementById('sendBtn').addEventListener('click', sendMessage);
+        document.getElementById('messageInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Add message to UI
+        function addMessage(sender, text, type) {
+            const container = document.getElementById('messagesContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+
+            let avatarClass = '';
+            if (type === 'agent') {
+                avatarClass = `agent-${sender.toLowerCase()}`;
+            }
+
+            if (type === 'system') {
+                messageDiv.innerHTML = `
+                    <div class="message-bubble">${text}</div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="message-header">
+                        ${type === 'agent' ? `<span class="agent-avatar ${avatarClass}"></span>` : ''}
+                        <span>${sender}</span>
+                    </div>
+                    <div class="message-bubble">${text}</div>
+                `;
+            }
+
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // Update agent status
+        function updateAgentStatus(agentName, status) {
+            const indicator = document.getElementById(`status-${agentName}`);
+            if (indicator) {
+                indicator.className = `agent-indicator ${status}`;
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initSocket();
+        });
+    </script>
+</body>
+</html>

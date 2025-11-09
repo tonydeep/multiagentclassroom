@@ -1,6 +1,34 @@
-# SAGE
+# SAGE - Multi-Agent Classroom
 
 An interactive learning environment supporting real-time discussions between students and multiple AI agents.
+
+## 🎉 NEW: Claude Agent SDK Implementation
+
+**We now have a simplified demo using Claude Agent SDK!** This new implementation replaces CrewAI with Anthropic's Claude Agent SDK for better performance and easier maintenance.
+
+👉 **[See README_DEMO.md for the new Claude Agent SDK demo](README_DEMO.md)**
+
+### Quick Start (Claude Agent SDK Demo)
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+npm install -g @anthropic-ai/claude-code
+
+# 2. Set up your API key
+echo "ANTHROPIC_API_KEY=your_key_here" > .env
+
+# 3. Run the demo
+python demo_app.py
+```
+
+Then open: **http://localhost:5001**
+
+---
+
+## Original Implementation (CrewAI)
+
+The original implementation using CrewAI is still available below:
 
 # Demo (May take some time to load)
 ![Demo](demo.gif)
